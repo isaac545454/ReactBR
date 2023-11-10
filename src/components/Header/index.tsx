@@ -16,7 +16,7 @@ export function Header() {
 						ReactBR
 					</Text>
 				</Flex>
-				<Icon as={HiMenu} color="white" fontSize="32" cursor="pointer" onClick={handleOpen} />
+				<Icon zIndex={100} as={HiMenu} color="white" fontSize="32" cursor="pointer" onClick={handleOpen} />
 			</Flex>
 			<Drawer isOpen={drawerOpen} onClose={handleOpen} />
 		</Box>
