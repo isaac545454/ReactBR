@@ -1,4 +1,4 @@
-import { useQuery, UseQueryResult, QueryKey, UseQueryOptions } from '@tanstack/react-query'
+import { useQuery, UseQueryResult, QueryKey } from '@tanstack/react-query'
 import { IGetMutation } from './types'
 import { createHttp } from '../../infra/Http/HttpClientFactory/create-http-factory'
 import { HttpMethod } from '../../enum/HttpMethod'
