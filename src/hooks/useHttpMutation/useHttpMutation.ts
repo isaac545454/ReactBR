@@ -1,6 +1,6 @@
 import { UseMutationResult, useMutation } from '@tanstack/react-query'
 import { IPostMutation, TRequestProps } from './types'
-import { createHttp } from '../../../infra/Http/HttpClientFactory/create-http-factory'
+import { createHttp } from '../../infra/Http/HttpClientFactory/create-http-factory'
 
 /**'
  * Hook personalizado para realizar uma mutação HTTP POST usando o react-query.
