@@ -1,9 +1,13 @@
 import { useRef, useEffect } from 'react'
+import { useMediaQuery } from '@chakra-ui/react'
 import * as THREE from 'three'
 
 export const Cube = () => {
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const scene = new THREE.Scene()
-	const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+	const [isSmallScreen] = useMediaQuery('(max-width: 48em)')
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 700)
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
 
@@ -11,11 +15,11 @@ export const Cube = () => {
 
 	useEffect(() => {
 		const textureLoader = new THREE.TextureLoader()
-		const rightTexture = textureLoader.load('react.svg')
-		const leftTexture = textureLoader.load('node.svg')
-		const topTexture = textureLoader.load('Design sem nome (9).png')
+		const rightTexture = textureLoader.load('Design sem nome (12).png')
+		const leftTexture = textureLoader.load('Design sem nome (10).png')
+		const topTexture = textureLoader.load('Design sem nome (13).png')
 		const bottomTexture = textureLoader.load('Design sem nome (7).png')
-		const frontTexture = textureLoader.load('Design sem nome (5).png')
+		const frontTexture = textureLoader.load('Design sem nome (14).png')
 		const backTexture = textureLoader.load('Design sem nome (6).png')
 
 		const materials = [
@@ -27,7 +31,7 @@ export const Cube = () => {
 			new THREE.MeshBasicMaterial({ map: backTexture }), // Back face
 		]
 
-		const geometry = new THREE.BoxGeometry()
+		const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5)
 		const cubeMesh = new THREE.Mesh(geometry, materials)
 		cube.current = cubeMesh
 		scene.add(cubeMesh)
@@ -36,8 +40,8 @@ export const Cube = () => {
 			requestAnimationFrame(animate)
 
 			if (cube.current) {
-				cube.current.rotation.x += 0.002
-				cube.current.rotation.y += 0.006
+				cube.current.rotation.x += 0.01
+				cube.current.rotation.y += 0.011
 			}
 
 			renderer.render(scene, camera)
@@ -46,7 +50,7 @@ export const Cube = () => {
 		animate()
 
 		return () => {
-			scene.remove(cube.current)
+			scene.remove(cube.current!)
 			materials.forEach(material => {
 				material.map?.dispose()
 				material.dispose()
@@ -59,8 +63,14 @@ export const Cube = () => {
 	useEffect(() => {
 		// Set up the scene
 		camera.position.z = 5
-		renderer.setSize(window.innerWidth, window.innerHeight)
-		renderer.setClearColor(0xffffff, 0) // Define o fundo como branco
+		renderer.setSize(window.innerWidth / 1.3, window.innerHeight / 1.3)
+		renderer.setClearColor(0xffffff, 0)
+
+		renderer.domElement.style.position = 'absolute'
+		renderer.domElement.style.left = '50%'
+		renderer.domElement.style.top = isSmallScreen ? '300px' : '400px'
+		renderer.domElement.style.transform = 'translate(-50%, -50%)'
+
 		document.body.appendChild(renderer.domElement)
 
 		return () => {
