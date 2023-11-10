@@ -7,7 +7,7 @@ import { PrismicApiResponse } from '../types/responseGetPost'
 export const useGetPostQuery = () => {
 	const { http } = createHttp<PrismicApiResponse>()
 	return useQuery<PrismicApiResponse>({
-		queryKey: [useGetPostQuery],
+		queryKey: ['useGetPostQuery'],
 		queryFn: () => http.exec({ method: HttpMethod.GET, endpoint: endpoint.getPosts }),
 	})
 }

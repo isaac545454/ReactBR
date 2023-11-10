@@ -12,8 +12,8 @@ export const Home = () => {
 	return (
 		<Flex flexDirection="column">
 			<Cube />
-			<Box maxWidth="1200px" mx="auto" mt={{ base: '500px', lg: '550px' }} zIndex={100}>
-				<Accordion w={{ base: '90vw', lg: '50vw' }} pb="10" allowToggle>
+			<Box maxWidth="1200px" mx="auto" mt={{ base: '450px', lg: '550px' }} zIndex={100}>
+				<Accordion w={{ base: '90vw', lg: '70vw', xl: '50vw' }} mb="20" allowToggle>
 					{List?.map(item => (
 						<Card
 							key={item.uid}
