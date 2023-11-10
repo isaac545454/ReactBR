@@ -1,8 +1,9 @@
- 
+import { Cube } from '../../components/Cube'
 
 export const Home = () => {
-    return <div><h2>222</h2>
-  </div>
+	return (
+		<div className="mt-5">
+			<Cube />
+		</div>
+	)
 }
-
- 
