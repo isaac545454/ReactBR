@@ -3,7 +3,7 @@ import { PrismicImage } from '../../types/responseGetPost'
 
 export const Card = ({ image, description, title }: { image: PrismicImage; description: string; title: string }) => {
 	return (
-		<AccordionItem bg="#D3D3D3" mb="2">
+		<AccordionItem bg="#D3D3D3" borderRadius="8" mb="2">
 			<AccordionButton h="20">
 				<Box as="span" flex="1" textAlign="left">
 					<Text fontWeight="bold">{title}</Text>
@@ -11,7 +11,7 @@ export const Card = ({ image, description, title }: { image: PrismicImage; descr
 				<AccordionIcon />
 			</AccordionButton>
 			<AccordionPanel pb={4} border="none">
-				<Text p="6" fontSize="x-large">
+				<Text p="2" fontSize="x-large">
 					{description}
 				</Text>
 				<Image src={image.url} alt={image?.alt} />

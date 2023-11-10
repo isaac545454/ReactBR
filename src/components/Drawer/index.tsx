@@ -28,13 +28,6 @@ export const Drawer = ({ isOpen, onClose }: Props) => {
 				<DrawerBody>
 					<Text>aaaaa</Text>
 				</DrawerBody>
-
-				<DrawerFooter>
-					<Button variant="outline" mr={3} onClick={onClose}>
-						Cancel
-					</Button>
-					<Button colorScheme="blue">Save</Button>
-				</DrawerFooter>
 			</DrawerContent>
 		</DrawerC>
 	)

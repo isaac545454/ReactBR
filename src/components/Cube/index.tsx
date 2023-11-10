@@ -68,7 +68,7 @@ export const Cube = () => {
 
 		renderer.domElement.style.position = 'absolute'
 		renderer.domElement.style.left = '50%'
-		renderer.domElement.style.top = isSmallScreen ? '300px' : '400px'
+		renderer.domElement.style.top = isSmallScreen ? '300px' : '350px'
 		renderer.domElement.style.transform = 'translate(-50%, -50%)'
 
 		document.body.appendChild(renderer.domElement)
