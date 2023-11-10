@@ -7,11 +7,10 @@ export const Home = () => {
 	const { data, isLoading } = useGetPostQuery()
 	const List = data?.results
 
-	if (isLoading || !List) return <div />
-
 	return (
 		<Flex flexDirection="column">
 			<Cube />
+			{isLoading || (!List && <div />)}
 			<Box maxWidth="1200px" mx="auto" mt={{ base: '450px', lg: '550px' }} zIndex={100}>
 				<Accordion w={{ base: '90vw', lg: '70vw', xl: '50vw' }} mb="20" allowToggle>
 					{List?.map(item => (
