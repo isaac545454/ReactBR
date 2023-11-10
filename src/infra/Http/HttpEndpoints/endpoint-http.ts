@@ -1,3 +1,3 @@
 export const endpoint = {
-	getPosts: '/',
+	getPosts: '',
 }

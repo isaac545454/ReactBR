@@ -2,11 +2,6 @@ import { AxiosInstance } from 'axios'
 import { HttpServiceProps } from './types'
 import { HttpProps } from '../../../types/HttpProps'
 
-/**
- * Uma classe para realizar solicitações HTTP usando Axios.
- * @template IResponse - O tipo da resposta esperada.
- * @params Client  - O tipo do cliente que será usado.
- */
 export class HttpService<IResponse, TClient extends AxiosInstance> implements HttpServiceProps<IResponse> {
 	constructor(private readonly client: TClient) {}
 	/**
