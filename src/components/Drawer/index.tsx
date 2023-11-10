@@ -1,13 +1,11 @@
 import {
 	Drawer as DrawerC,
-	Button,
 	DrawerContent,
 	DrawerOverlay,
 	DrawerHeader,
 	DrawerCloseButton,
 	DrawerBody,
 	Text,
-	DrawerFooter,
 	useMediaQuery,
 } from '@chakra-ui/react'
 
@@ -24,7 +22,6 @@ export const Drawer = ({ isOpen, onClose }: Props) => {
 			<DrawerContent>
 				<DrawerCloseButton />
 				<DrawerHeader>Create your account</DrawerHeader>
-
 				<DrawerBody>
 					<Text>aaaaa</Text>
 				</DrawerBody>
