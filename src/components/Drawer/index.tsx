@@ -2,12 +2,12 @@ import {
 	Drawer as DrawerC,
 	DrawerContent,
 	DrawerOverlay,
-	DrawerHeader,
 	DrawerCloseButton,
 	DrawerBody,
 	Text,
 	useMediaQuery,
 } from '@chakra-ui/react'
+import { options } from './options'
 
 type Props = {
 	isOpen: boolean
@@ -21,9 +21,13 @@ export const Drawer = ({ isOpen, onClose }: Props) => {
 			<DrawerOverlay />
 			<DrawerContent>
 				<DrawerCloseButton />
-				<DrawerHeader>Create your account</DrawerHeader>
-				<DrawerBody>
-					<Text>aaaaa</Text>
+
+				<DrawerBody my="10">
+					{options.map(item => (
+						<Text mt="5" fontWeight="bold" key={item.link}>
+							{item.title}
+						</Text>
+					))}
 				</DrawerBody>
 			</DrawerContent>
 		</DrawerC>
