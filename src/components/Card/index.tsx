@@ -32,7 +32,7 @@ export const Card = ({ image, description, title }: { image: PrismicImage; descr
 					h={`${description.length * 0.6} `}
 					style={{ opacity: 1 }}
 				/>
-				<Image src={image.url} alt={image?.alt} mx="auto" mt="10" />
+				<Image src={image.url} alt={image?.alt} mx="auto" mt="10" w={{ base: '100%', lg: '80%', xl: '60%' }} />
 			</AccordionPanel>
 		</AccordionItem>
 	)
