@@ -19,4 +19,8 @@ export const options = [
 		title: 'Canais no youtube',
 		link: '',
 	},
+	{
+		title: 'Cursos G',
+		link: '',
+	},
 ]
