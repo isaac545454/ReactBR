@@ -6,7 +6,7 @@ type Response = {}
 export const {{name}} = () => {
   const { http } = createHttp<Response>()
 	return useQuery<Response>({
-		queryKey: ['useGetPostQuery'],
+		queryKey: [{{name}}],
 		queryFn: () => http.exec({  }),
 	})
 }

@@ -1,1 +1,1 @@
-type {{name}}Props = {}
+export type {{name}}Props = {}
