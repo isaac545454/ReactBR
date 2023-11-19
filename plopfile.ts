@@ -35,6 +35,16 @@ export default function (plop: NodePlopAPI) {
 				path: 'src/pages/{{name}}/index.tsx',
 				templateFile: 'generate/PageTemplate.tsx',
 			},
+			{
+				type: 'add',
+				path: 'src/pages/{{name}}/hook.ts',
+				templateFile: 'generate/hook.ts',
+			},
+			{
+				type: 'add',
+				path: 'src/pages/{{name}}/types.ts',
+				templateFile: 'generate/types.ts',
+			},
 		],
 	})
 	plop.setGenerator('query', {

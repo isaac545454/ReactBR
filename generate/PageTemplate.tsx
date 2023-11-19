@@ -1,8 +1,9 @@
-import React from 'react';
+import { use{{name}} } from './hook'
+import { {{ name }}Props } from './types'
 
-type {{name}}Props = {}
-
-export const {{name}} = ({}: {{name}}Props) => {
+export const {{ name }} = ({ }: {{ name }}Props) => {
+  const { } = use{{ name }}()
+  
   return (
     <div>
     </div>

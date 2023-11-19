@@ -21,7 +21,9 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-window": "^1.8.9",
-    "three": "^0.158.0"
+    "three": "^0.158.0",
+    "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
