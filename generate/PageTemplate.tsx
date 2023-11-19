@@ -5,8 +5,7 @@ export const {{ name }} = ({ }: {{ name }}Props) => {
   const { } = use{{ name }}()
   
   return (
-    <div>
-    </div>
+    <div></div>
   );
 }
 
