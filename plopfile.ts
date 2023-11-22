@@ -18,7 +18,24 @@ export default function (plop: NodePlopAPI) {
 				templateFile: 'generate/ComponentTemplate.tsx',
 			},
 		],
-	})
+	}),
+		plop.setGenerator('mutation', {
+			description: 'Gerador de componentes React',
+			prompts: [
+				{
+					type: 'input',
+					name: 'name',
+					message: 'Nome do useMutation:',
+				},
+			],
+			actions: [
+				{
+					type: 'add',
+					path: 'src/query/{{name}}.ts',
+					templateFile: 'generate/mutatuion.ts',
+				},
+			],
+		})
 
 	plop.setGenerator('page', {
 		description: 'Gerador de páginas React',
