@@ -1,6 +1,6 @@
 import { Card } from '../../components/Card'
 import { Cube } from '../../components/Cube'
-import { Accordion, Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Grid } from '@chakra-ui/react'
 import { useGetPostQuery } from '../../query/useGetPostQuery'
 
 export const Home = () => {
@@ -12,7 +12,7 @@ export const Home = () => {
 			<Cube />
 			{isLoading || (!List && <div />)}
 			<Box maxWidth="1200px" mx="auto" mt={{ base: '450px', lg: '550px' }} zIndex={100}>
-				<Accordion w={{ base: '90vw', lg: '70vw', xl: '50vw' }} mb="20" allowToggle>
+				<Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={4}>
 					{List?.map(item => (
 						<Card
 							key={item.uid}
@@ -21,7 +21,7 @@ export const Home = () => {
 							title={item.data.title[0].text}
 						/>
 					))}
-				</Accordion>
+				</Grid>
 			</Box>
 		</Flex>
 	)

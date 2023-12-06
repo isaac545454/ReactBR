@@ -8,7 +8,7 @@ export function Header() {
 	const handleOpen = () => setDrawerOpen(state => !state)
 
 	return (
-		<Box bg="black" py="2" px="4" position="fixed" w="100vw" zIndex="100">
+		<Box bg="black" py="3" px="4" position="fixed" w="100vw" zIndex="100" borderBottom="1px" borderBottomColor="white">
 			<Flex maxWidth="1200px" mx="auto" justifyContent="space-between" alignItems="center">
 				<Flex alignItems="center">
 					<Image src="reacttemplate-svgrepo-com.svg" w="14" />
