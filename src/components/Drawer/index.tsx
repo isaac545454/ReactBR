@@ -19,16 +19,15 @@ export const Drawer = ({ isOpen, onClose }: Props) => {
 	return (
 		<DrawerC isOpen={isOpen} placement={isSmallScreen ? 'top' : 'left'} onClose={onClose}>
 			<DrawerOverlay />
-			<DrawerContent>
-				<DrawerCloseButton />
-
+			<DrawerContent bg="#0d1117" color="#e6edf3">
 				<DrawerBody my="10">
 					{options.map(item => (
-						<Text mt="5" fontWeight="bold" key={item.link}>
+						<Text fontWeight="bold" key={item.link}>
 							{item.title}
 						</Text>
 					))}
 				</DrawerBody>
+				<DrawerCloseButton />
 			</DrawerContent>
 		</DrawerC>
 	)

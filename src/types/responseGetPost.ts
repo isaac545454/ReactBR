@@ -1,44 +1,15 @@
-type PrismicImageDimensions = {
-	width: number
-	height: number
-}
-
-export type PrismicImage = {
-	dimensions: PrismicImageDimensions
-	alt: string
-	copyright: string | null
-	url: string
-}
-
-type PrismicTitle = {
-	type: 'heading1'
-	text: string
-	direction: 'ltr'
-}
-
-type PrismicDescription = {
-	type: 'paragraph'
-	text: string
-	direction: 'ltr'
-}
-
-type PrismicPostData = {
-	title: PrismicTitle[]
-	image: PrismicImage
-	description: PrismicDescription[]
-}
-
-type PrismicPost = {
-	id: string
-	uid: string
-	url: string | null
+export interface Title {
 	type: string
-	href: string
-	tags: string[]
-	first_publication_date: string
-	last_publication_date: string
-	slugs: string[]
-	data: PrismicPostData
+	text: string
+	direction: string
+}
+export interface Data {
+	data: { title: Title[]; link: Link[]; id: string }
+}
+export interface Link {
+	type: string
+	text: string
+	direction: string
 }
 
 export type PrismicApiResponse = {
@@ -49,7 +20,7 @@ export type PrismicApiResponse = {
 	total_pages: number
 	next_page: null | number
 	prev_page: null | number
-	results: PrismicPost[]
+	results: Data[]
 	version: string
 	license: string
 }

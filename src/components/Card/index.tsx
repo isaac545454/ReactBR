@@ -1,14 +1,13 @@
-import { Center, Text } from '@chakra-ui/react'
-import { PrismicImage } from '../../types/responseGetPost'
+import { Center, Link } from '@chakra-ui/react'
 
-export const Card = ({ title }: { image: PrismicImage; description: string; title: string }) => {
+export const Card = ({ title, link }: { link: string; title: string }) => {
 	return (
-		<Center borderRadius="8" mb="4" bg="#30363d">
-			<Center h="20">
+		<Center borderRadius="8" mb="2" bg="#30363d">
+			<Center h="24">
 				<Center as="span" flex="1" textAlign="left">
-					<Text fontWeight="bold" fontSize="medium" textAlign="center" color="#e6edf3">
+					<Link href={link} fontWeight="bold" fontSize="medium" textAlign="center" color="#e6edf3" target="_blank">
 						{title}
-					</Text>
+					</Link>
 				</Center>
 			</Center>
 		</Center>

@@ -8,7 +8,7 @@ export const Footer = () => {
 			bg="black"
 			w="100vw"
 			bottom="0"
-			h="50"
+			h="72px"
 			position="fixed"
 			justifyContent="center"
 			alignItems="center"
