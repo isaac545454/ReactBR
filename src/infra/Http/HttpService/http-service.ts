@@ -9,8 +9,8 @@ export class HttpService<IResponse, TClient extends AxiosInstance> implements Ht
 	async exec({ endpoint = '', ...res }: HttpProps): Promise<IResponse> {
 		try {
 			return (await this.client<IResponse>(endpoint, { ...res })).data
-		} catch {
-			throw new FetchDataError('Falha ao buscar dados da API')
+		} catch (err) {
+			throw FetchDataError.analyzeError(err)
 		}
 	}
 }
