@@ -19,16 +19,19 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^3.3.3",
     "@tanstack/react-query": "^5.8.1",
     "axios": "^1.6.1",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.2",
     "react-icons": "^4.11.0",
     "react-window": "^1.8.9",
     "three": "^0.158.0",
     "vite-plugin-svgr": "^4.2.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",
