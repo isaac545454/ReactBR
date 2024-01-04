@@ -4,10 +4,12 @@ import { endpoint } from '../infra/Http/HttpEndpoints/endpoint-http'
 import { HttpMethod } from '../enum/HttpMethod'
 import { PrismicApiResponse } from '../types/responseGetPost'
 
-export const useGetPostQuery = () => {
-	const { http } = createHttp<PrismicApiResponse>()
+export const useGetPostQuery = (promise_: Promise<PrismicApiResponse>) => {
 	return useQuery<PrismicApiResponse>({
 		queryKey: ['useGetPostQuery'],
-		queryFn: () => http.exec({ method: HttpMethod.GET, endpoint: endpoint.getPosts }),
+		queryFn: () => promise_,
 	})
 }
+
+const { http } = createHttp<PrismicApiResponse>()
+http.exec({ method: HttpMethod.GET, endpoint: endpoint.getPosts })

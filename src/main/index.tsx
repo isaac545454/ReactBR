@@ -6,7 +6,6 @@ import { Home } from '../pages/Home'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { Form } from '../pages/Form'
 
 const queryClient = new QueryClient()
 
@@ -15,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 		<QueryClientProvider client={queryClient}>
 			<ChakraProvider>
 				<Header />
-				<Form />
+				<Home />
 				<Footer />
 			</ChakraProvider>
 		</QueryClientProvider>

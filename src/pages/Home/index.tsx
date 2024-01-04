@@ -1,31 +1,13 @@
-import { Card } from '../../components/Card'
-import { Cube } from '../../components/Cube'
-import { Box, Flex, Grid } from '@chakra-ui/react'
-import { useGetPostQuery } from '../../query/useGetPostQuery'
+import { useHomeModel } from './index.model'
+import { HomeView } from './index.view'
+import { PrismicApiResponse } from '@/types/responseGetPost'
+import { HttpMethod } from '../../enum/HttpMethod'
+import { createHttp } from '../../infra/Http/HttpClientFactory/create-http-factory'
+import { endpoint } from '../../infra/Http/HttpEndpoints/endpoint-http'
 
 export const Home = () => {
-	const { data, isLoading } = useGetPostQuery()
-	const List = data?.results
+	const { http } = createHttp<PrismicApiResponse>()
+	const { List, isLoading } = useHomeModel(http.exec({ method: HttpMethod.GET, endpoint: endpoint.getPosts }))
 
-	return (
-		<Flex flexDirection="column">
-			<Cube />
-			{isLoading || (!List && <div />)}
-			<Box
-				maxWidth="1200px"
-				mx="auto"
-				mt={{ base: '450px', md: '550px', lg: '650px' }}
-				zIndex={100}
-				pt="20"
-				pb="32"
-				px="4"
-			>
-				<Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={4}>
-					{List?.map(item => (
-						<Card key={item.data.id} link={item.data.link[0].text} title={item.data.title[0].text} />
-					))}
-				</Grid>
-			</Box>
-		</Flex>
-	)
+	return <HomeView isLoading={isLoading} List={List} />
 }
