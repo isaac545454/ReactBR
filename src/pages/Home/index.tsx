@@ -7,7 +7,6 @@ import { endpoint } from '../../infra/Http/HttpEndpoints/endpoint-http'
 
 export const Home = () => {
 	const { http } = createHttp<PrismicApiResponse>()
-	const { List, isLoading } = useHomeModel(http.exec({ method: HttpMethod.GET, endpoint: endpoint.getPosts }))
-
-	return <HomeView isLoading={isLoading} List={List} />
+	const apiRequest = http.exec({ method: HttpMethod.GET, endpoint: endpoint.getPosts })
+	return <HomeView {...useHomeModel(apiRequest)} />
 }
